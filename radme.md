@@ -1,0 +1,1 @@
+this is BEAT GPT a free opensource project website to acces on your own, with friends at a party at a funeral it doesnt matter; ytuo wanna entertain yourself, BEATGPT will ask you questions like noone will. you will lear and test yourself. check it out!

@@ -9,22 +9,17 @@ const port = process.env.PORT || 3000;
 // Create an HTTP server
 const server = http.createServer((req, res) => {
   // Serve static files (e.g., HTML, CSS, JavaScript)
-  if (req.url === '/' || req.url === '/index.html') {
-    const filePath = path.join(__dirname, 'public', 'index.html');
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end('Internal Server Error');
-      } else {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(data);
-      }
-    });
-  } else {
-    // Handle other routes or API endpoints here
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('Not Found');
-  }
+  const filePath = path.join(__dirname, 'public', req.url);
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Not Found');
+    } else {
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(data);
+    }
+  });
 });
 
 // Start the server

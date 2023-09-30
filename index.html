@@ -5,12 +5,22 @@
     <title>Quiz Game</title>
 </head>
 <body>
-    <div id="question-container">
-        <p id="question">Press 'Start' to get the first question!</p>
+    <div id="difficulty-container">
+        <label for="difficulty">Select Difficulty:</label>
+        <select id="difficulty">
+            <option value="1">Primary Education</option>
+            <option value="2">High School</option>
+            <option value="3">University</option>
+        </select>
         <button id="start-button" onclick="startGame()">Start</button>
+    </div>
+    <div id="question-container" style="display: none;">
+        <p id="question">Press 'Start' to get the first question!</p>
+        <input type="text" id="answer" placeholder="Your answer">
         <button id="submit-button" onclick="submitAnswer()" disabled>Submit</button>
         <p id="score">Score: 0</p>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+<script src="script.js"></script>
